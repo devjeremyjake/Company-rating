@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,17 +12,24 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any;
 
-  pages: Array<{title: string, component: any}>;
+  pages: any[];
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+     public statusBar: StatusBar,
+     public splashScreen: SplashScreen,
+     private storage: Storage 
+    ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', component: 'DashboardPage', icon: 'home' },
+      { title: 'Companies', component: 'CompaniesPage', icon: 'list-box' },
+      { title: 'Search', component: 'ListPage', icon: 'search' },
+      { title: 'LeaderBoard', component: 'ListPage', icon: 'archive' },
+      { title: 'Review', component: 'ReviewPage', icon: 'star' }
     ];
 
   }
@@ -33,12 +40,30 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+     this.storage.get('useremail').then(loggedIn => {
+       if (loggedIn === null) {
+         this.nav.setRoot("LoginPage");
+       }
+
+       if (loggedIn !== null) {
+          this.nav.setRoot("DashboardPage");
+       }
+     }); 
     });
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+      // if (page.component === "HomePage") {
+      //   this.nav.setRoot(page.component);
+      // }else {
+      //   this.nav.push(page.component);
+      // }
+     this.nav.setRoot(page.component);
+  }
+
+  logout() {
+    this.storage.remove('useremail');
+      this.nav.setRoot("LoginPage");
   }
 }

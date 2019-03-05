@@ -1,0 +1,31 @@
+page-review {
+    .label-md[stacked] {
+        font-size: 1.7rem;
+        font-weight: 500;
+        float: left;
+    }
+
+    ion-range{
+        padding: 0px !important;
+    }
+
+    .item-inner {
+        border: none !important;
+    }
+
+    .item-inner .button {
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    ion-textarea{
+        border: 1px solid #4aa1f3;
+        height: 100px;
+        padding-top: 0px !important;
+    }
+
+    .grid .label-md{
+        padding-left: 10px;
+    }
+}

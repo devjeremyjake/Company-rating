@@ -1,3 +1,22 @@
 page-home {
-
+    .scroll-content {
+        overflow: hidden !important;
+    }
+    ion-item {
+        border-radius: 3px !important;
+        padding-left: 10px !important;
+        margin-bottom: 10px !important;
+        color: rgb(11, 65, 165) !important;
+        background-color: rgba(255, 255, 255, .2) !important;
+        font-size: 0.9em;
+    }
+    
+    ::-webkit-input-placeholder {
+        color: rgb(79, 148, 226) !important;
+    }
+    
+    .item-inner {
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+    }
 }

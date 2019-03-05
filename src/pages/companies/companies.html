@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title> <i style="color: rgb(127, 165, 236);">Companies</i> </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="property-list">
+  
+ <!----test section--> 
+    <ion-item-sliding *ngFor="let company of companies">
+        <button ion-item (click)="companyProfile(company)">
+            <ion-thumbnail item-left>
+                <img src="../assets/img/favicon.ico"/>
+            </ion-thumbnail>
+            <h2>
+              <i style="color:rgba(50, 91, 224, 0.76); font-weight:bold; font-size: 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"> {{ company.companyname}} </i> 
+            </h2>
+            <ion-col class="dataCol">
+                <ion-row>
+                   <ion-col col-12>
+                     <span>
+                       <ion-icon name="archive" class="ionClass"></ion-icon>
+                       {{ company.sector}}
+                     </span>
+                   </ion-col>
+                   <ion-col col-12>
+                     <ion-icon name="pin" class="ionClass"></ion-icon>
+                     {{ company.city }}, {{ company.country}}
+                   </ion-col>
+                   <ion-col col-12 class="rating">
+                     <ion-icon name="star"></ion-icon>
+                     <ion-icon name="star"></ion-icon>
+                     <ion-icon name="star"></ion-icon>
+                     <ion-icon name="star"></ion-icon>
+                     <ion-icon name="star"></ion-icon>
+   
+                     (4.5)
+                   </ion-col> 
+                </ion-row>
+              </ion-col>
+        </button>
+        <ion-item-options>
+            <button danger >Delete</button>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-content>

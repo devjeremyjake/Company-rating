@@ -1,0 +1,27 @@
+page-companies {
+   ion-content {
+       ion-avatar img {
+            border-radius: 0px !important;
+            width: 50px !important;
+            height: 50px !important;
+            max-width: 100px ;
+            max-height: 100px;
+       }
+
+    .rowCol {
+        margin-top: 3px;
+        height: auto;
+        bottom: -3px !important;
+        padding-bottom: 0px !important;
+        color: grey;
+        padding-left: 17px !important;
+
+      }
+
+    .rowCol companyname {
+        width: auto !important;
+        font-weight: bold;
+        font-size: 18px;
+    }
+   }
+}

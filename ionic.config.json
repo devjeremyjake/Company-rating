@@ -1,5 +1,7 @@
 {
   "name": "rateme",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

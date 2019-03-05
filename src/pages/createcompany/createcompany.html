@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Company</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="login-content" ion-fixed style="height:100%; width:100%;">
+        <!-- Login form -->
+        <form class="list-form">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="person" item-start class="text-primary"></ion-icon>
+              Company Name
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="pin" item-start class="text-primary"></ion-icon>
+              Company Address
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="address" name="address"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="navigate" item-start class="text-primary"></ion-icon>
+              city
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="city" name="city"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="locate" item-start class="text-primary"></ion-icon>
+              Country
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="country" name="country"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="play" item-start class="text-primary"></ion-icon>
+              Sector
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="sector" name="sector"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="globe" item-start class="text-primary"></ion-icon>
+              Website
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="website" name="website"></ion-input>
+          </ion-item>
+        </form>
+    
+        <div margin-top>
+          <button ion-button block color="dark" tappable (click)="register()">
+            Register
+          </button>
+        </div>
+    
+      </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title><i style="color: rgb(127, 165, 236)">Dashboard</i></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-bounce>
+
+    <ion-slides pager>
+      <ion-slide style="background-image: url('assets/img/background.jpg')">
+        <p>
+          Company Affair is a few a few taps away
+          <ion-row no-padding class="other-data">
+              <ion-col no-padding class="column">
+                <button ion-button icon-left medium full color="dark" tappable (click)="company()">
+                  <ion-icon name="create"></ion-icon>
+                    Add New Company
+                </button>
+              </ion-col>
+             <!-- <ion-col no-padding class="column">
+                <button ion-button icon-left small full color="light" menuClose (click)="logout()">
+                  <ion-icon name="log-out"></ion-icon>
+                    Log out
+                </button>
+              </ion-col>--> 
+            </ion-row>
+        </p>
+
+      </ion-slide>
+        
+    </ion-slides>
+</ion-content>

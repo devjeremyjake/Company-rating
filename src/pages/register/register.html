@@ -1,0 +1,55 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- -->
+<ion-content class="auth-page">
+  <div class="login-content" ion-fixed style="height:100%; width:100%;">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Company</strong> Rating
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="fullname" name="fullname" placeholder="Fullname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="email" name="email" placeholder="Email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </form>
+
+    <div margin-top>
+      <button ion-button block color="colorbtn" (click)="usersignup()">
+        SIGN UP
+      </button>
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" (click)="login()">I have an account? Login</span>
+    </div>
+
+  </div>
+</ion-content>
+
